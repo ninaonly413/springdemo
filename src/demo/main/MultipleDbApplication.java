@@ -1,11 +1,17 @@
-package demo;
+package demo.main;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.annotation.ComponentScan;
+
+import demo.dao.CustomerRepository;
 
 @SpringBootApplication
+@ComponentScan({"demo"})
+@EntityScan("demo")
 public class MultipleDbApplication implements CommandLineRunner {
 
 	@Autowired
